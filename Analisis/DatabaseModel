@@ -1,0 +1,25 @@
+- Users
+	* id
+	* username
+	* password
+	* email
+
+- Proccess
+	* id
+	* name
+	* version
+	* platform
+	* technology
+	* containerId
+	* command
+	* description
+
+- History
+	* id
+	* action
+	* processId
+	* userId
+
+
+
+The status filter matches containers by status. You can filter using created, restarting, running, paused, exited and dead. For example, to filter for running containers:

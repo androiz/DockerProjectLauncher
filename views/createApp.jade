@@ -1,0 +1,93 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title SB Admin 2 - Bootstrap Admin Theme
+    // Bootstrap Core CSS
+    link(href='/bower_components/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    // MetisMenu CSS
+    link(href='/bower_components/metisMenu/dist/metisMenu.min.css', rel='stylesheet')
+    // Timeline CSS
+    link(href='/dist/css/timeline.css', rel='stylesheet')
+    // Custom CSS
+    link(href='/stylesheets/sb-admin-2.css', rel='stylesheet')
+    // Morris Charts CSS
+    link(href='/bower_components/morrisjs/morris.css', rel='stylesheet')
+    // DataTables CSS
+    link(href='/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css', rel='stylesheet')
+    // DataTables Responsive CSS
+    link(href='/bower_components/datatables-responsive/css/dataTables.responsive.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='/bower_components/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body
+    #wrapper
+      include ./menu.jade
+      #page-wrapper
+        .row
+          .col-lg-12
+            h1.page-header Create App
+          // /.col-lg-12
+        // /.row
+        .row
+          .col-lg-12
+            .panel.panel-default
+              .panel-heading
+                | Basic Form Elements
+              .panel-body
+                .row
+                  .col-lg-6
+                    if status == 1
+                      .alert.alert-success.alert-dismissable
+                        button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+                        | #{title}
+                    form(role='form', method='post', action='/createApp')
+                      .form-group
+                        label App Name
+                        input.form-control(name='name')
+                      .form-group
+                        label Version
+                        input.form-control(name='version')
+                      .form-group
+                        label Platform
+                        input.form-control(name='platform')
+                      .form-group
+                        label Technology
+                        input.form-control(name='technology')
+                      .form-group
+                        label ContainerId
+                        input.form-control(name='containerId')
+                      .form-group
+                        label Description
+                        textarea.form-control(rows='3', name='description')
+                      button.btn.btn-primary(type='submit') Create App
+                  .col-lg-6
+                    .alert.alert-info
+                      | A través de este formulario es posible crear un nuevo proceso que cargue una aplicación en el servidor.
+                      | </br></br>
+                      | Entre los campos de entrada, tenemos <strong>command</strong> el cual ha de ser el comando a ejecutar en el
+                      | servidor.</br></br>
+                      | <strong>docker run --name &lt;app-name&gt; -p &lt;port&gt;:&lt;port&gt; -d &lt;docker-container&gt;</strong>
+    // jQuery
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+    // Metis Menu Plugin JavaScript
+    script(src='/bower_components/metisMenu/dist/metisMenu.min.js')
+    // Morris Charts JavaScript
+    script(src='/bower_components/raphael/raphael-min.js')
+    script(src='/bower_components/morrisjs/morris.min.js')
+    script(src='/javascripts/morris-data.js')
+    // DataTables JavaScript
+    script(src='/bower_components/datatables/media/js/jquery.dataTables.min.js')
+    script(src='/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')
+    // Custom Theme JavaScript
+    script(src='/javascripts/sb-admin-2.js')
