@@ -11,7 +11,7 @@ var bcrypt = require('bcrypt-nodejs');
 // models.users
 var UserModel = require('../models/users');
 var AppModel = require('../models/apps');
-var ProcessStatus = require('../models/ProcessStatus');
+var ProcessStatus = require('../models/processStatus');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
