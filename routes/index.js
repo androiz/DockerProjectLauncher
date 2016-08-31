@@ -97,6 +97,9 @@ router.post('/startProcess', function(req, res, next) {
         if(error){
           err = 1;
           console.log(stderr);
+          new ProcessStatus.ProcessStatus({'containerId': model.attributes.containerId}).where({'containerId': model.attributes.containerId}).save({'status': 'exited'}, {patch: true}).then(function(model) {
+            console.log('Starting process...');        
+          });
         }else{
           new ProcessStatus.ProcessStatus({'containerId': model.attributes.containerId}).where({'containerId': model.attributes.containerId}).save({'status': 'running'}, {patch: true}).then(function(model) {
             console.log('Started process...');
